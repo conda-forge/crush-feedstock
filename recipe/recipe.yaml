@@ -1,6 +1,6 @@
 context:
   name: crush
-  version: "0.2.1"
+  version: "0.2.2"
 
 package:
   name: ${{ name|lower }}
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://github.com/charmbracelet/${{ name }}/archive/refs/tags/v${{ version }}.tar.gz
-  sha256: c1f24b8334abc114f0ff4f08a59fa50a52972cd18c23b7eddd1eaa4b044ea390
+  sha256: 77706263a32739967fbfa2ad12d0d6dcce02ca59e28e2ab1f847326a63e7a6ca
   target_directory: src
 
 build:
