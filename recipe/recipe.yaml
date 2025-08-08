@@ -10,15 +10,19 @@ source:
   url: https://github.com/charmbracelet/${{ name }}/archive/refs/tags/v${{ version }}.tar.gz
   sha256: 77706263a32739967fbfa2ad12d0d6dcce02ca59e28e2ab1f847326a63e7a6ca
   target_directory: src
+  patches:
+    - 0001-skip-version-retrieval.patch
 
 build:
-  number: 0
+  number: 1
   script:
     - cd src
     - go-licenses save . --save_path ../library_licenses
     - if: unix
-      then: go build -v -o $PREFIX/bin/crush -ldflags="-s -w"
-      else: go build -v -o %LIBRARY_BIN%\crush.exe -ldflags="-s"
+      then:
+        - set -x
+        - go build -v -o $PREFIX/bin/crush -ldflags="-s -w -X=github.com/charmbracelet/crush/internal/version.Version=${{ version }}"
+      else: go build -v -o %LIBRARY_BIN%\crush.exe -ldflags="-s -X=github.com/charmbracelet/crush/internal/version.Version=${{ version }}"
 
 requirements:
   build:
@@ -26,7 +30,11 @@ requirements:
     - go-licenses
 
 tests:
-  - script: crush --help
+  - script:
+      - crush --help
+      - crush --version
+      - if: unix
+        then: crush --version | grep "crush version ${{ version | replace('.', '\\.') }}"
   - package_contents:
       bin:
         - crush
