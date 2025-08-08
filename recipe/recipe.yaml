@@ -31,7 +31,7 @@ tests:
   - script:
       - crush --help
       - if: unix
-        then: crush --version | grep "crush version v${{ version | replace('.', '\\.') }}"
+        then: crush --version | grep "crush version ${{ version | replace('.', '\\.') }}"
         else: crush --version
   - package_contents:
       bin:
