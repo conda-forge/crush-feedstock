@@ -10,6 +10,8 @@ source:
   url: https://github.com/charmbracelet/${{ name }}/archive/refs/tags/v${{ version }}.tar.gz
   sha256: 77706263a32739967fbfa2ad12d0d6dcce02ca59e28e2ab1f847326a63e7a6ca
   target_directory: src
+  patches:
+    - 0001-skip-version-retrieval.patch
 
 build:
   number: 1
