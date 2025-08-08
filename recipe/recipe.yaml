@@ -30,9 +30,9 @@ requirements:
 tests:
   - script:
       - crush --help
+      - crush --version
       - if: unix
         then: crush --version | grep "crush version ${{ version | replace('.', '\\.') }}"
-        else: crush --version
   - package_contents:
       bin:
         - crush
