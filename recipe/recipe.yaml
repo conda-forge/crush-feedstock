@@ -1,6 +1,6 @@
 context:
   name: crush
-  version: "0.6.1"
+  version: "0.6.2"
 
 package:
   name: ${{ name|lower }}
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://github.com/charmbracelet/${{ name }}/archive/refs/tags/v${{ version }}.tar.gz
-  sha256: 45bcc199f9cf96666580f4fcb30ab5bd293a451bd94242238e218403248225a2
+  sha256: a84fa00092bf9253539713e3c50451faa44240b8aa151e846dcb1aab87f1bcd3
   target_directory: src
   patches:
     - 0001-skip-version-retrieval.patch
