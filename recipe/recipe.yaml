@@ -48,7 +48,7 @@ about:
     Your tools, your code, and your workflows, wired into your LLM of choice.
   license: FSL-1.1-MIT AND MIT
   license_file:
-    - src/LICENSE
+    - src/LICENSE.md
     - library_licenses/
   documentation: https://pkg.go.dev/github.com/charmbracelet/crush
   repository: https://github.com/charmbracelet/crush
