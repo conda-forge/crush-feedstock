@@ -1,14 +1,13 @@
 context:
-  name: crush
-  version: "0.7.2"
+  version: "0.32.1"
 
 package:
-  name: ${{ name|lower }}
+  name: crush
   version: ${{ version }}
 
 source:
-  url: https://github.com/charmbracelet/${{ name }}/archive/refs/tags/v${{ version }}.tar.gz
-  sha256: 7cbd4223a054d68eb96dcd45b5eae3637d00a57194840290d4ab36e29ab44acf
+  url: https://github.com/charmbracelet/crush/archive/refs/tags/v${{ version }}.tar.gz
+  sha256: 23ade3280bdc9da1a141e6d715f86d230242730da7132471c195fdd4e37a4f51
   target_directory: src
   patches:
     - 0001-skip-version-retrieval.patch
