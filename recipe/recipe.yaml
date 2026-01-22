@@ -1,5 +1,5 @@
 context:
-  version: "0.33.3"
+  version: "0.34.0"
 
 package:
   name: crush
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/charmbracelet/crush/archive/refs/tags/v${{ version }}.tar.gz
-  sha256: a0206a866ca5ab1bb181573810a93f874d7ba2c70b26ffcb41088f473063bd17
+  sha256: 9ee7c64687402d783b3f592163fc93967615298ee2309291d0495ea1aeabe310
   target_directory: src
 
 build:
