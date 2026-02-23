@@ -46,9 +46,11 @@ tests:
       bin:
         - crush
       files:
-        - share/bash-completion/completions/crush
-        - share/fish/vendor_completions.d/crush.fish
-        - share/zsh/site-functions/_crush
+        - if: unix
+          then:
+            - share/bash-completion/completions/crush
+            - share/fish/vendor_completions.d/crush.fish
+            - share/zsh/site-functions/_crush
       strict: true
 
 about:
