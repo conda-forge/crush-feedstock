@@ -8,7 +8,8 @@ conda_forge_output_validation: true
 conda_install_tool: pixi
 build_platform:
   linux_aarch64: linux_64
-  osx_arm64: osx_64
+provider:
+  osx_arm64: azure
 test: native_and_emulated
 bot:
   automerge: true
