@@ -12,12 +12,15 @@ source:
   - url: https://raw.githubusercontent.com/golang/freetype/master/LICENSE
     sha256: d3ba056adc2b7909e95681deaae397fb37c97ed491a920f491214f07b62c41d0
     target_directory: freetype_license
+  - url: https://raw.githubusercontent.com/segmentio/asm/master/LICENSE
+    sha256: cca993712df289a5958bdef69031a5dac0f951ac15afeb313f9eeea55ed59443
+    target_directory: segmentio_asm_license
 
 build:
   number: 0
   script:
     - cd src
-    - go-licenses save . --save_path ../library_licenses --ignore github.com/golang/freetype
+    - go-licenses save . --save_path ../library_licenses --ignore github.com/golang/freetype --ignore github.com/segmentio/asm
     - if: unix
       then:
         - set -x
@@ -60,6 +63,7 @@ about:
     - src/LICENSE.md
     - library_licenses/
     - freetype_license/LICENSE
+    - segmentio_asm_license/LICENSE
   documentation: https://pkg.go.dev/github.com/charmbracelet/crush
   repository: https://github.com/charmbracelet/crush
 
