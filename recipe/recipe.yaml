@@ -1,5 +1,5 @@
 context:
-  version: "0.48.0"
+  version: "0.49.0"
 
 package:
   name: crush
@@ -7,7 +7,7 @@ package:
 
 source:
   - url: https://github.com/charmbracelet/crush/archive/refs/tags/v${{ version }}.tar.gz
-    sha256: 388d0cdb94708009a348b47c691735f2cb73f013fe2cc0a745450916785ca4d6
+    sha256: d8d0be3df62d6ffb8aa085bfebac11087ba29dc6ed156d6c9f64fc8dafa5d9a3
     target_directory: src
   - url: https://raw.githubusercontent.com/golang/freetype/master/LICENSE
     sha256: d3ba056adc2b7909e95681deaae397fb37c97ed491a920f491214f07b62c41d0
