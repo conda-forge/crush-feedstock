@@ -1,5 +1,5 @@
 context:
-  version: "0.65.2"
+  version: "0.66.0"
 
 package:
   name: crush
@@ -7,7 +7,7 @@ package:
 
 source:
   - url: https://github.com/charmbracelet/crush/archive/refs/tags/v${{ version }}.tar.gz
-    sha256: 81b5edb30aa824ecdba92febe024f08e37dbe9634164dec2f1203f16f1cc968a
+    sha256: 87246691bfdc927003847bfe7f18ac70fe02110a40cb4e0c88ca14ec0aa61c3e
     target_directory: src
   - url: https://raw.githubusercontent.com/golang/freetype/master/LICENSE
     sha256: d3ba056adc2b7909e95681deaae397fb37c97ed491a920f491214f07b62c41d0
@@ -15,12 +15,15 @@ source:
   - url: https://raw.githubusercontent.com/segmentio/asm/master/LICENSE
     sha256: cca993712df289a5958bdef69031a5dac0f951ac15afeb313f9eeea55ed59443
     target_directory: segmentio_asm_license
+  - url: https://raw.githubusercontent.com/alecthomas/chroma/refs/heads/master/COPYING
+    sha256: 13654b052f885cb3fa47d7343e13975d9c8a64c3bcd84993c35d5eb01f22b23f
+    target_directory: chroma_license
 
 build:
   number: 0
   script:
     - cd src
-    - go-licenses save . --save_path ../library_licenses --ignore github.com/golang/freetype --ignore github.com/segmentio/asm
+    - go-licenses save . --save_path ../library_licenses --ignore github.com/golang/freetype --ignore github.com/segmentio/asm --ignore github.com/alecthomas/chroma
     - if: unix
       then:
         - set -x
@@ -64,6 +67,7 @@ about:
     - library_licenses/
     - freetype_license/LICENSE
     - segmentio_asm_license/LICENSE
+    - chroma_license/COPYING
   documentation: https://pkg.go.dev/github.com/charmbracelet/crush
   repository: https://github.com/charmbracelet/crush
 
