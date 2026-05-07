@@ -15,12 +15,15 @@ source:
   - url: https://raw.githubusercontent.com/segmentio/asm/master/LICENSE
     sha256: cca993712df289a5958bdef69031a5dac0f951ac15afeb313f9eeea55ed59443
     target_directory: segmentio_asm_license
+  - url: https://raw.githubusercontent.com/alecthomas/chroma/refs/heads/master/COPYING
+    sha256: 13654b052f885cb3fa47d7343e13975d9c8a64c3bcd84993c35d5eb01f22b23f
+    target_directory: chroma_license
 
 build:
   number: 0
   script:
     - cd src
-    - go-licenses save . --save_path ../library_licenses --ignore github.com/golang/freetype --ignore github.com/segmentio/asm
+    - go-licenses save . --save_path ../library_licenses --ignore github.com/golang/freetype --ignore github.com/segmentio/asm --ignore github.com/alecthomas/chroma
     - if: unix
       then:
         - set -x
@@ -64,6 +67,7 @@ about:
     - library_licenses/
     - freetype_license/LICENSE
     - segmentio_asm_license/LICENSE
+    - chroma_license/COPYING
   documentation: https://pkg.go.dev/github.com/charmbracelet/crush
   repository: https://github.com/charmbracelet/crush
 
